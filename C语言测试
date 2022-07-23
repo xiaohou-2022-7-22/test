@@ -1,0 +1,41 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+struct Book
+{
+	char name[20];
+	short price;
+};
+  int main()
+  {
+	  //利用结构体类型创建一个该类型的结构体变量，
+	  //并且将书名命名为 "C语言程序设计" ,价格55
+	struct Book b1 = { "C语言程序设计" ,55};
+
+
+	//第一种调用方法.1
+	printf("书名：%s\n", b1.name);//利用b1.name打印出书名
+	printf("价格：%d元\n", b1.price);//利用b1.price打印出价格
+	b1.price = 50;//变量.成员 进行再次赋值
+	strcpy(b1.name, "C++");//修改书名时该书名类型是一个数组
+                           //需要使用strcpy:string copy字符串拷贝是一个库函数需要使用头文件<string.h>
+	printf("修改后的书名：%s\n", b1.name);
+	printf("修改后的价格：%d元\n", b1.price);
+
+	//              .2
+	struct Book* pb = &b1;//对b1取地址放入到pb变量中，pb前面加*称，*pb为指针变量，
+	                      //指针指向的对象是Book，而Book的类型是struct
+	printf("书名：%s\n", (*pb).name);//利用*Pb指向b1.变量，打印出书名，%s打印字符串。
+	printf("价格：%d元\n", (*pb).price);//利用pb打印出价格
+	(*pb).price = 51;//重新对价格进行赋值
+	printf("修改后的价格：%d元\n", (*pb).price);
+
+	//第二种调用方法
+	printf("书名：%s\n", pb->name);//结构体指针->成员，该种方法较为简便
+	printf("价格：%d\n", pb->price);
+	pb->price = 52;
+	printf("修改后的价格：%d\n", pb->price);
+	
+	return 0;
+
+}
