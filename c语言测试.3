@@ -1,0 +1,25 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int ret = 0;
+	int ch = 0;//创建一个变量用来存放getchar()获取的内容
+	char password[20] = {0};
+	printf("请输入密码:");
+	scanf("%s", password);//输入函数会将输入缓冲区中的空格前或者部分内容读取到
+	//缓冲区还剩下一个'\n'，使用getchar()将'\n'读取走
+	while ((ch = getchar()) != '\n')//ch = getchar()获取字符
+	{
+		;//使用一个循环以确保将\n之前的全部读取
+	}    //若不读取将会导致getchar()获取非Y的值，自动跳到下一步导致‘放弃确认’
+	printf("请确认(Y/N):");
+	ret = getchar();
+	if (ret == 'Y')
+	{
+		printf("确认成功\n");
+	}
+	else
+	{
+		printf("放弃确认\n");
+	}
+}
