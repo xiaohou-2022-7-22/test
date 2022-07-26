@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	scanf("%d%d%d", &a, &b, &c);
+	//算法实现：a中存放最大值，b中次之，c中存放最小值
+	if (a < b)
+	{
+		int tmp = a;//用于存放a和b中较大的
+		a = b;//将较大的b赋值给a
+		b = tmp;//此时，tmp中存放的是较大值
+	}
+	if (a < c)
+	{
+		int tmp = a;//将a和c中较大的放入tmp中
+		a = c;//将较大的c赋值给a
+		c = tmp;//较大的c变成了a放入tmp中
+	}
+	if (b < c)
+	{
+		int tmp = b;//用于存放b和c中较大的
+		b = c;//将较大的c赋值给b
+		c = tmp;//较大的c变成了b放入tmp中
+	}
+	printf("%d%d%d\n", a, b, c);//按照a,b,c的顺序打印
+	return 0;
+}
