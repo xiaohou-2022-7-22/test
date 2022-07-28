@@ -20,7 +20,7 @@ void game()
     //time_t time(time_t *timer);time_t本质上就是一个长整型long,定义time函数时，需要使用头文件<time.h>
     ret = rand() % 100 + 1;//rand生成随机数的范围是:0~32767数量较大，
     //使rand()%100得到的就是0~99范围内的数字+1，即0~100范围较为合理。
-    printf("%d\n", ret);
+    //printf("%d\n", ret);
     //2、猜数字
     while(1)
     {
