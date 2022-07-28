@@ -44,7 +44,7 @@ void game()
 int main()
 {
   int input = 0;
-  srand((unsigned int)time(NULL));//将time的类型强制类型转换成int类型;time(NULL)中NULL在此表示空指针
+  srand((unsigned int)time(NULL));//将time的类型强制类型转换成int类型;time(NULL)中NULL在此表示空指针。
   do
   {
     menu();
