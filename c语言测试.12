@@ -1,0 +1,67 @@
+//猜数字游戏
+//1.电脑会生成一个随机数
+//2.猜数字
+#include<stdio.h>
+#include<time.h>
+
+void menu()
+{
+  printf("******************************\n");
+  printf("****   1.play    0.exit   ****\n");
+  printf("******************************\n");
+}
+void game()
+{ 
+    //1、生成一个随机数
+    int ret = 0;  //存放产生的随机数
+    int guess = 0;//接受猜测的数字
+    //使用时间戳设置随机数的起始点
+    //时间戳:当前计算机的时间-计算机的起始时间(1970.1.1 0:0:0) = (xxxxx)秒-->(xxxxx)就是时间戳
+    //time_t time(time_t *timer);time_t本质上就是一个长整型long,定义time函数时，需要使用头文件<time.h>
+    ret = rand() % 100 + 1;//rand生成随机数的范围是:0~32767数量较大，
+    //使rand()%100得到的就是0~99范围内的数字+1，即0~100范围较为合理。
+    printf("%d\n", ret);
+    //2、猜数字
+    while(1)
+    {
+      printf("请猜数字:")
+      scanf("%d",&guess);
+      if (guess > ret)
+      {
+        printf("猜大了\n");
+      }
+      else if (guess < ret)
+      {
+        printf("猜小了\n");
+      }
+      else
+      {
+        printf("恭喜你，猜对了\n");
+        break;
+      }
+    }
+}
+int main()
+{
+  int input = 0;
+  srand((unsigned int)time(NULL));//将time的类型强制类型转换成int类型;time(NULL)中NULL在此表示空指针
+  do
+  {
+    menu();
+    printf("请选择：");
+    scanf("%d", &input);
+    switch(input)
+    {
+      case 1:
+          game();//猜游戏的过程
+          break;
+      case 0:
+          printf("退出游戏\n");
+          break;
+      default:
+          printf("选择错误\n");
+          break;
+    }
+  } while(input);
+  return 0;
+}
