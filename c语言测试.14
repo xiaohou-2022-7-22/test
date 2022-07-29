@@ -1,0 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+//自定义函数
+void Swap (int* pa, int* pb)//pa,pb为形式参数
+{
+  int tmp = 0;
+  tmp =*pa;
+  *pa = *pb;
+  *pb = tmp;
+}
+int main()
+{
+  int a = 10;
+  int b = 20;
+  printf("a = %d b =  %d\n", a , b);
+  Swap(&a, &b);//调用Swap函数
+  printf("a = %d b =  %d\n", a , b);
+  return 0;
+}
