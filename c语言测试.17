@@ -1,6 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
-#include<math.h>
 int binary_search(int arr[], int k, int sz)
 {
     //算法实现
