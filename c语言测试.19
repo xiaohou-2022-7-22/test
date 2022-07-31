@@ -12,6 +12,6 @@ int main()
 {
 	unsigned int num = 0;
 	scanf("%d", &num);
-	//递归
+	//使用递归
 	printf(num);
 }
