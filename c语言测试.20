@@ -1,0 +1,11 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int len = 0;
+	//以下两行代码可以写成链式访问的方式
+	//len = strlen("abc");
+	//printf("%d\n", len);
+	printf("%d\n", strlen("abc"));
+	return 0;
+}
