@@ -1,0 +1,10 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int arr[10] = { 1,2,3,4,5 };
+	printf("%p\n", arr);//元素的首地址
+	printf("%p\n", &arr[0]);//元素的首地址
+	printf("%d\n", *arr);//1
+	return 0;
+}
