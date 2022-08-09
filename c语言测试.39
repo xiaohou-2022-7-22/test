@@ -1,0 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int a = 0x11223344;
+	int* pa = &a;
+	char* pc = &a;
+	printf("%p\n", pa);//    000000C3E90FF794
+	printf("%p\n", pa + 1);//000000C3E90FF798 -- 由4变为8，直接增加4个字节。
+
+	printf("%p\n", pc);//    000000C3E90FF794
+	printf("%p\n", pc + 1);//000000C3E90FF795 -- 由4变为5，直接增加1个字节
+	return 0;
+}
