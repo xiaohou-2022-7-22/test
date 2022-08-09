@@ -1,0 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int arr[10] = { 0 };
+	int* p = arr;//数组名--首元素的地址
+	int i = 0;
+	//当指针的范围超出数组arr的范围时，p就是野指针。
+	for (i = 0; i < 12; i++)
+	{
+		p++;
+	}
+	return 0;
+}
