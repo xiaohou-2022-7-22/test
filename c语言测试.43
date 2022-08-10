@@ -1,0 +1,13 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int arr[10] = { 0 };
+	printf("%p\n", arr);// --arr 首元素的地址:       000000DF34CFF528
+	printf("%p\n", arr + 1); //                      000000DF34CFF52C
+	printf("%p\n", &arr[0]);// --arr[0] 首元素的地址:000000DF34CFF528
+	printf("%p\n", &arr[0] + 1);//                   000000DF34CFF52C
+	printf("%p\n", &arr);// --&arr 整个数组的地址:   000000DF34CFF528
+	printf("%p\n", &arr +1);//                       000000DF34CFF550	
+	return 0;
+}
