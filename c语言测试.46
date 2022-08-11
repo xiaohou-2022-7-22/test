@@ -1,0 +1,12 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+//struct -- 结构体关键字
+//Stu -- 结构体标签
+typedef struct Stu   
+{
+	//成员变量
+	char name[20];
+	short age;
+	char tele[12];
+	char sex[5];
+}Stu;//类型
