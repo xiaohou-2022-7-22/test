@@ -1,0 +1,33 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+//struct -- 结构体关键字
+//Stu -- 结构体标签
+typedef struct Stu
+{
+	//成员变量
+	char name[20];
+	short age;
+	char tele[12];
+	char sex[5];
+}Stu;
+void print1(Stu tem)//结构体传参
+{
+	printf("name: %s\n", tem.name);
+	printf("age: %d\n", tem.age);
+	printf("tele: %s\n", tem.tele);
+	printf("sex: %s\n", tem.sex);
+}
+void print2(Stu* ps)//结构体地址传参
+{
+	printf("name:%s\n", ps->name);
+	printf("age:%d\n", ps->age);
+	printf("tele:%s\n", ps->tele);
+	printf("sex:%s\n", ps->sex);
+}
+int main()
+{
+	Stu s = { "李四", 40, "17605670000", "男" };
+	print1(s);//传结构体
+	print2(&s);//传地址
+	return 0;
+}
