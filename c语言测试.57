@@ -1,0 +1,24 @@
+1、int main()
+{
+  char ch = 'w';
+  char* pc = &ch;
+  *pc = 'w';
+  return 0;
+}
+
+2、int main()
+{
+  char arr[] = "abcdef";
+  char* pc = arr;
+  printf("%s\n",arr);//abcdef
+  printf("%s\n",pc);//abcdef
+  return 0;
+}
+
+3、int main()
+{
+  char* p = "abcdef";//abcdef是一个常变量字符串。
+  printf("%c\n",*p);//p中存的是首元素a的地址。
+  printf("%s\n",p);//abcdef
+  return 0;
+}
