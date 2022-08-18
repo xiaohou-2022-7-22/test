@@ -1,0 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	//字符指针
+	char ch = 'w';
+	char* p = &ch;
+	const char* p2 = "abcdef";
+	//指针数组-数组-存指针的数组
+	int* arr[10];
+	char* ch[5];
+	//数组指针-指向数组
+	int arr2[5];//数组
+	int(*pa)[5] = &arr2;//取出数组的地址，pa就是一个数组指针。
+
+	int* p3;//整形指针-指向整形数组
+	char* p4;//字符指针-指向字符的
+	return 0;
+}
