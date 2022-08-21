@@ -1,0 +1,7 @@
+//代码1
+(*(void(*))0)();
+//代码2
+void(*signal(int, void(*)(int)))(int);
+//代码2.1
+typedef void(*pfun_t)(int);
+pfun_t signal(int, pfun_t);
