@@ -1,0 +1,6 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+//写一个函数指针pf能够指向my_strcpy
+char* my_strcpy(char* dest, const char* src);
+//写一个函数指针数组pfArr能够存放4个my_strcpy函数地址
+char*(*pfArr[4])(char*, const char*)
