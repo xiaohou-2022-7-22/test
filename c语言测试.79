@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int Add(int x, int y)
+{
+	return x + y;
+}
+int main()
+{
+	//指针数组
+	int* arr[10];
+	//数组指针
+	int* (*pa)[10] = &arr;
+	//函数指针
+	int (*PAdd)(int, int) = Add;//&Add
+	//调用1
+	int sum = (*PAdd)(1, 2);
+	//调用2
+	int sum = PAdd(1, 2);
+	printf("sum = %d\n", sum);
+	//函数指针的数组
+	int(*PArr[5])(int, int) = &PArr;
+	return 0;
+}
