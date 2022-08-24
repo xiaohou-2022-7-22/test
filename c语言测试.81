@@ -1,0 +1,13 @@
+int main()
+{
+    int a = 10;
+    int* pa = &a;
+    //char* pc = &a;
+    char ch = 'w';
+    void* p = &a;
+    p = &ch;
+    //void* 类型指针可以接受一个任意类型的地址。
+    void* p = &a;
+    *p = 0;
+    p++;
+    //void*类型指针不能进行解引用操作，也不能进行+ - 操作。
