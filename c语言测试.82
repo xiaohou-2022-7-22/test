@@ -1,0 +1,1 @@
+qsort(s,sz,sizeof(s[0]),cmp_stu_by_name);
