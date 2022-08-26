@@ -1,0 +1,12 @@
+	//strlen
+	char arr[] = { 'a','b','c','d','e','f' };
+	printf("%d\n", strlen(arr));//随机值
+	printf("%d\n", strlen(arr + 0));//随机值
+	printf("%d\n", strlen(*arr));//err
+	printf("%d\n", strlen(arr[1]));//err
+	printf("%d\n", strlen(&arr));//随机值
+	printf("%d\n", strlen(&arr + 1));//随机值 - 6
+	printf("%d\n", strlen(&arr[0] + 1));//随机值 - 1
+
+	return 0;
+}
