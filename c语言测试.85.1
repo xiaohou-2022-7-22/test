@@ -1,0 +1,9 @@
+	//字符数组
+	char arr[] = { 'a','b','c','d','e','f' };
+	printf("%d\n", sizeof(arr));//6 * 1 = 6，sizeof计算的是数组的大小
+	printf("%d\n", sizeof(arr + 0));//4/8 - arr首元素地址，arr+0 还是首元素地址。
+	printf("%d\n", sizeof(*arr));//arr首元素地址，*arr就是首元素。
+	printf("%d\n", sizeof(arr[1]));//1
+	printf("%d\n", sizeof(&arr));//4/8 - &arr - 就是数组的地址。
+	printf("%d\n", sizeof(&arr + 1));//4/8 - &arr+1是跳过整个数组的地址。
+	printf("%d\n", sizeof(&arr[0] + 1));//4/8 - 第二个元素地址。
