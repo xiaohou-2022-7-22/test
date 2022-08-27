@@ -1,0 +1,8 @@
+	char arr[] = "abcdef";
+	printf("%d\n", strlen(arr));//6
+	printf("%d\n", strlen(arr + 0));//6
+	printf("%d\n", strlen(*arr));//err
+	printf("%d\n", strlen(arr[1]));//err
+	printf("%d\n", strlen(&arr));//&arr - 数组的地址-数组的指针char(*p)[7] = arr;
+	printf("%d\n", strlen(&arr + 1));//6
+	printf("%d\n", strlen(&arr[0] + 1));//随机值
