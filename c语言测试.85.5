@@ -1,0 +1,10 @@
+	char *p = "abcdef";
+	printf("%d\n", sizeof(p));//4/8 - 计算指针变量P的大小。
+	printf("%d\n", sizeof(p+1));//4/8 - p+1得到的是字符b的地址。
+	printf("%d\n", sizeof(*p));//1 - *p就是字符串的第一个字符‘a'
+	printf("%d\n", sizeof(p[0]));//1 - int arr[10];arr[0] == *(arr+0) p[0] == *(p+0) =='a'
+	printf("%d\n", sizeof(&p));//4/8 - 地址。
+	printf("%d\n", sizeof(&p+1));//4/8 - 地址。
+	printf("%d\n", sizeof(&p[0] + 1));//4/8 - 地址。
+	return 0;
+}
