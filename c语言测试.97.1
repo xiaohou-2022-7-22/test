@@ -1,0 +1,16 @@
+char arr[] = "abcdef";// a b c d e f \0
+printf("%d\n",sizeof(arr);//sizeof(arr)计算的是数组的大小单位字节结果是 7。
+printf("%d\n",sizeof(&arr[0]+1);//&arr[0]+1 是第二个元素的地址。
+
+char arr[] = "abcdef";
+printf("%d\n",strlen(arr));// 从首元素计算到\0前一位。结果是6。
+printf("%d\n",strlen(arr+0));//  6。
+printf("%d\n",strlen(&arr));// &arr是数组的地址要存入到数组指针中，char(*)[7] = &arr;结果是6。
+printf("%d\n",strlen(&arr+1));//随机值
+printf("%d\n",strlen(arr[0]+1));//arr[0]+1指向第二个元素，从第二个元素向后数还有5个字符。
+
+char *p = "abcdef";//将a的地址放入到p中。
+printf("%d\n",sizeof(p);// - 4/8 计算的是指针变量p的大小。
+printf("%d\n",sizeof(p+1);// - 4/8 p是字符a的地址，p+1就是字符b的地址。
+printf("%d\n",sizeof(p[0]);// int arr[0]; arr[0] == *(arr+0); p[0] == *(p+0) == 'a';
+printf("%d\n",sizeof(&p[0]);//  4/8  b的地址。
