@@ -1,0 +1,16 @@
+char *p = "abcdef";
+printf("%d\n",strlen(p));//p中存放的是a的地址，即从a的位置向后数字符。
+
+//二维数组
+int a[3][4] = {0};
+printf("%d\n",sizeof(a);//48
+printf("%d\n",sizeof(a[0]);//a[0]相当于第一行，计算的是第一行的大小。16
+printf("%d\n",sizeof(a[0]+1);// - 4/8 第一行第二个元素的地址。
+printf("%d\n",sizeof(*(a[0]+1)));//4
+printf("%d\n",sizeof(a+1);//第二行的地址。
+printf("%d\n",sizeof(*(a+1));//相当于sizeof(a[1])计算第二行的大小。16
+printf("%d\n",sizeof(&a[0]+1));//第二行地址。4
+printf("%d\n",sizeof(*&a[0]+1));//计算第二行的大小，单位字节。
+printf("%d\n",sizeof(*a));//计算第一行的大小。16
+printf("%d\n",sizeof(a[3]));//16 sizeof内部表达式不参与计算。
+
