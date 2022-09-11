@@ -1,0 +1,22 @@
+char* a[] = {"work","at","alibaba"};
+char* *pa = a;//pa指向的元素类型是char*,指针*pa;
+//  pa          a   
+// char**     char*  -->  "work"
+//            char*  -->  "ar"
+//            char*  -->  "alibaba"
+// int* p;//p+1跳过一个整形。
+
+
+char* c[] = {"ENTER","NEW","POINT","FIRST"};
+char* *cp[] = {c+3,c+2,c+1,c};
+char*** cpp = cp;
+//         cpp                 cp                     c
+//        char***              c+3            c+0    char*   -->    "WNTER"
+//                             c+2            c+1    char*   -->    "NEW"
+//                             c+1            c+2    char*   -->    "POINT"
+//                             c              c+3    char*   -->    "FIRST"
+printf("%s\n",**++cpp);//++cpp使得cpp指针指向cp的c+2的位置*解引用操作得到c+2,c+2又指向c再次解引用得到char*中的字符串。
+printf("%s\n",*--*++cpp+3);//++cpp指向c+1解引用得到c+1，c+1进行--操作得到c,此时再次进行解引用得到c中的内容即E的地址，然后+3操作，此时得到的是ER。
+printf("%s\n",*cpp[-2]+3);//  *cpp[-2]+3 <=> **(cpp+(-2))+3 <=> **(cpp-2)+3;结果是ST。
+
+printf("%s\n",cpp[-1][-1]+1);//cpp[-1] <=> *(cpp-1); cpp[-1][-1] <=> *(*(cpp-1)-1); cpp[-1][-1]+1 <=> *(*(cpp-1)-1)+1结果是EW。
