@@ -1,0 +1,39 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<assert.h>
+//ABCD左旋一个字符串得到BCDA
+//ABCD左旋两个字符串得到CDAB
+//三步翻转法
+//ab cdef逆序左边
+//ba fedc逆序右边
+//cdefab逆序整体
+//逆序字符串函数
+void reverse(char* left, char* right)
+{
+	assert(left != NULL);
+	assert(right != NULL);
+	while (left < right)
+	{
+		char tmp = *left;
+		*left = *right;
+		*right = tmp;
+		left++;
+		right--;
+	}
+}
+void left_move(char* arr, int k)
+{
+	assert(arr);
+	int len = strlen(arr);
+	assert(k <= len);//警告left_move(arr,2);中2的值出现错误。
+	reverse(arr, arr + k - 1);//arr是a的地址，arr+k-1是b的地址，逆序左边。
+	reverse(arr+k, arr + len - 1);//arr+k是c的地址，arr+len-1是f的地址，逆序右边。
+	reverse(arr, arr + len - 1);//arr左边，arr+len-1右边，逆序整体。
+}
+int main()
+{
+	char arr[] = "abcdef";
+	left_move(arr, 2);
+	printf("%s\n", arr);
+	return 0;
+}
