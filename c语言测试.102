@@ -1,0 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+//char* strtok(char* str, const char* sep);
+int mian()
+{
+//点十进制的表示方式
+	char arr[] = "192.168.31.121";
+	const char* p = ".";
+	char buf[1024] = { 0 };
+	strcpy(buf, arr);
+	//切割buf中的字符串。
+	char* ret = NULL;
+	for (ret = strtok(arr, p); ret != NULL; ret = strtok(NULL, p))
+	{
+		printf("%s\n", ret);
+	}
+	return 0;
+}
